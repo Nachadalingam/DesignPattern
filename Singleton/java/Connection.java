@@ -9,9 +9,16 @@ public class Connection {
     }
     public static Connection getInstance()
     {
+        // double Checking to avoid mutithread issue
         if(Instance==null) {
-            Instance= new Connection();
+            synchronized (Connection.class)
+            {
+                if (Instance == null) {
+                    Instance = new Connection();
+                }
+            }
         }
         return Instance;
     }
+
 }
