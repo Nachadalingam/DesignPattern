@@ -11,7 +11,7 @@ public class Connection {
     {
         // double Checking to avoid mutithread issue
         if(Instance==null) {
-            synchronized (Connection.class)
+            synchronized (Instance)
             {
                 if (Instance == null) {
                     Instance = new Connection();
