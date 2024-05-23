@@ -9,6 +9,11 @@ public class Main {
     {
         BackGroundObject prototype=new BackGroundObject(20,30,40,Tree);
         s.add(prototype);
+        BackGroundObject b=prototype.clone();
+        b.setType(Mountain);
+        System.out.println(prototype.getType());
+        System.out.println(b.getType());
+
 
 
     }
